@@ -1,20 +1,20 @@
 public class Main {
     public static void main(String[] args) {
 
-        SabunCuciMuka sabun = new SabunCuciMuka("Hada Labo", 45000);
-        Toner toner = new Toner("Hada Labo", 75000);
-        Serum serum = new Serum("Somethinc", 120000);
-        Moisturizer moist = new Moisturizer("Skintific", 98000);
-        Sunscreen sunscreen = new Sunscreen("Azarine", 65000);
+        SabunCuciMuka sabun = new SabunCuciMuka("Nuface", 45000, 100);
+        Toner toner = new Toner("Wardah", 75000, 100);
+        Serum serum = new Serum("Somethinc", 120000, 20);
+        Moisturizer moist = new Moisturizer("Skintific", 98000, 30);
+        Sunscreen sunscreen = new Sunscreen("Azarine", 65000, 50);
 
-        // GANTI DI SINI AJA, true = dipakai, false = enggak
+        //  true = dipakai, false = tidak dipakai
         boolean p1 = sabun.cuciMuka(true);
         boolean p2 = toner.tuang(true);
         boolean p3 = serum.tetes(true);
-        boolean p4 = moist.oles(false);
+        boolean p4 = moist.oles(true);
         boolean p5 = sunscreen.pakai(true);
 
-        boolean begadang = false;
+        boolean begadang = false; 
         boolean tidurPakaiMakeup = false;
 
         int skor = 0;
@@ -43,9 +43,11 @@ public class Main {
 class SabunCuciMuka {
     String merek;
     int harga;
-    SabunCuciMuka(String merek, int harga) {
+    int ukuranMl;
+    SabunCuciMuka(String merek, int harga, int ukuranMl) {
         this.merek = merek;
         this.harga = harga;
+        this.ukuranMl = ukuranMl;
     }
     boolean cuciMuka(boolean rajin) {
         System.out.println("Cuci muka pakai " + merek);
@@ -56,9 +58,11 @@ class SabunCuciMuka {
 class Toner {
     String merek;
     int harga;
-    Toner(String merek, int harga) {
+    int ukuranMl;
+    Toner(String merek, int harga, int ukuranMl) {
         this.merek = merek;
         this.harga = harga;
+        this.ukuranMl = ukuranMl;
     }
     boolean tuang(boolean pakai) {
         System.out.println("Toner " + merek + " dipakai");
@@ -69,9 +73,11 @@ class Toner {
 class Serum {
     String merek;
     int harga;
-    Serum(String merek, int harga) {
+    int ukuranMl;
+    Serum(String merek, int harga, int ukuranMl) {
         this.merek = merek;
         this.harga = harga;
+        this.ukuranMl = ukuranMl;
     }
     boolean tetes(boolean pakai) {
         System.out.println("Serum " + merek + " ditetes");
@@ -82,9 +88,11 @@ class Serum {
 class Moisturizer {
     String merek;
     int harga;
-    Moisturizer(String merek, int harga) {
+    int ukuranMl;
+    Moisturizer(String merek, int harga, int ukuranMl) {
         this.merek = merek;
         this.harga = harga;
+        this.ukuranMl = ukuranMl;
     }
     boolean oles(boolean pakai) {
         System.out.println("Moisturizer " + merek + " dioles");
@@ -95,9 +103,11 @@ class Moisturizer {
 class Sunscreen {
     String merek;
     int harga;
-    Sunscreen(String merek, int harga) {
+    int ukuranMl;
+    Sunscreen(String merek, int harga, int ukuranMl) {
         this.merek = merek;
         this.harga = harga;
+        this.ukuranMl = ukuranMl;
     }
     boolean pakai(boolean pakai) {
         System.out.println("Sunscreen " + merek + " dipakai");
